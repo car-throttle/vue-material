@@ -194,37 +194,7 @@ module.exports = exports['default'];
 
 /***/ }),
 
-/***/ 101:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = install;
-
-var _mdIcon = __webpack_require__(288);
-
-var _mdIcon2 = _interopRequireDefault(_mdIcon);
-
-var _mdIcon3 = __webpack_require__(242);
-
-var _mdIcon4 = _interopRequireDefault(_mdIcon3);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function install(Vue) {
-  Vue.component('md-icon', _mdIcon2.default);
-
-  Vue.material.styles.push(_mdIcon4.default);
-}
-module.exports = exports['default'];
-
-/***/ }),
-
-/***/ 151:
+/***/ 132:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -292,32 +262,28 @@ exports.default = {
       }));
     },
     loadSVG: function loadSVG() {
-      var _this2 = this;
-
       if (!registeredIcons[this.mdSrc]) {
-        (function () {
-          var request = new XMLHttpRequest();
-          var self = _this2;
+        var request = new XMLHttpRequest();
+        var self = this;
 
-          request.open('GET', _this2.mdSrc, true);
+        request.open('GET', this.mdSrc, true);
 
-          request.onload = function () {
-            var mimetype = this.getResponseHeader('content-type');
+        request.onload = function () {
+          var mimetype = this.getResponseHeader('content-type');
 
-            if (this.status >= 200 && this.status < 400 && self.isImage(mimetype)) {
-              if (self.isSVG(mimetype)) {
-                registeredIcons[self.mdSrc] = this.response;
-                self.setSVGContent(this.response);
-              } else {
-                self.loadImage();
-              }
+          if (this.status >= 200 && this.status < 400 && self.isImage(mimetype)) {
+            if (self.isSVG(mimetype)) {
+              registeredIcons[self.mdSrc] = this.response;
+              self.setSVGContent(this.response);
             } else {
-              console.warn('The file ' + self.mdSrc + ' is not a valid image.');
+              self.loadImage();
             }
-          };
+          } else {
+            console.warn('The file ' + self.mdSrc + ' is not a valid image.');
+          }
+        };
 
-          request.send();
-        })();
+        request.send();
       } else {
         this.setSVGContent(registeredIcons[this.mdSrc]);
       }
@@ -366,7 +332,7 @@ __webpack_require__(207)
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(151),
+  __webpack_require__(132),
   /* template */
   __webpack_require__(348),
   /* scopeId */
@@ -374,7 +340,7 @@ var Component = __webpack_require__(0)(
   /* cssModules */
   null
 )
-Component.options.__file = "/Users/mrufino/Projects/personal/github/vue-material/src/components/mdIcon/mdIcon.vue"
+Component.options.__file = "/Users/james/Sites/vue-material/src/components/mdIcon/mdIcon.vue"
 if (Component.esModule && Object.keys(Component.esModule).some((function (key) {return key !== "default" && key !== "__esModule"}))) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] mdIcon.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -433,8 +399,38 @@ if (false) {
 /***/ 408:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(101);
+module.exports = __webpack_require__(82);
 
+
+/***/ }),
+
+/***/ 82:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = install;
+
+var _mdIcon = __webpack_require__(288);
+
+var _mdIcon2 = _interopRequireDefault(_mdIcon);
+
+var _mdIcon3 = __webpack_require__(242);
+
+var _mdIcon4 = _interopRequireDefault(_mdIcon3);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function install(Vue) {
+  Vue.component('md-icon', _mdIcon2.default);
+
+  Vue.material.styles.push(_mdIcon4.default);
+}
+module.exports = exports['default'];
 
 /***/ })
 

@@ -194,7 +194,7 @@ module.exports = exports['default'];
 
 /***/ }),
 
-/***/ 143:
+/***/ 124:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -289,7 +289,7 @@ __webpack_require__(225)
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(143),
+  __webpack_require__(124),
   /* template */
   __webpack_require__(386),
   /* scopeId */
@@ -297,7 +297,7 @@ var Component = __webpack_require__(0)(
   /* cssModules */
   null
 )
-Component.options.__file = "/Users/mrufino/Projects/personal/github/vue-material/src/components/mdCheckbox/mdCheckbox.vue"
+Component.options.__file = "/Users/james/Sites/vue-material/src/components/mdCheckbox/mdCheckbox.vue"
 if (Component.esModule && Object.keys(Component.esModule).some((function (key) {return key !== "default" && key !== "__esModule"}))) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] mdCheckbox.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -341,7 +341,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "type": "checkbox",
       "name": _vm.name,
-      "id": _vm.id,
+      "id": _vm.id || this._uid,
       "disabled": _vm.disabled,
       "tabindex": "-1"
     },
@@ -356,7 +356,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   })], 1), _vm._v(" "), (_vm.$slots.default) ? _c('label', {
     staticClass: "md-checkbox-label",
     attrs: {
-      "for": _vm.id || _vm.name
+      "for": _vm.id || _vm.name || this._uid
     }
   }, [_vm._t("default")], 2) : _vm._e()])
 },staticRenderFns: []}
@@ -373,12 +373,12 @@ if (false) {
 /***/ 403:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(96);
+module.exports = __webpack_require__(77);
 
 
 /***/ }),
 
-/***/ 96:
+/***/ 77:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
