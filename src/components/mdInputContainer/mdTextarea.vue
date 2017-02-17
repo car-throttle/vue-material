@@ -44,7 +44,7 @@
         }
 
         autosize(this.$el);
-        setTimeout(() => autosize.update(this.$el), 200);
+        setTimeout(() => autosize.update(this.$el), 500);
       });
     },
     beforeDestroy() {
