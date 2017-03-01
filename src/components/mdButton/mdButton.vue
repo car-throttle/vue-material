@@ -1,5 +1,5 @@
 <template>
-  <button class="md-button" :class="[themeClass]" :type="type" :disabled="disabled" v-if="!href">
+  <button class="md-button" :class="[themeClass]" :type="type" :disabled="disabled" v-if="!href" @click="onClick">
     <md-ink-ripple :md-disabled="disabled"></md-ink-ripple>
     <slot></slot>
   </button>
@@ -34,6 +34,11 @@
         }
 
         return this.rel;
+      }
+    },
+    methods: {
+      onClick(...args) {
+        this.$emit('click', ...args);
       }
     }
   };
