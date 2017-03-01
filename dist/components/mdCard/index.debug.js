@@ -409,7 +409,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _getImageLightness = __webpack_require__(57);
+var _getImageLightness = __webpack_require__(67);
 
 var _getImageLightness2 = _interopRequireDefault(_getImageLightness);
 
@@ -1057,7 +1057,7 @@ module.exports = __webpack_require__(76);
 
 /***/ }),
 
-/***/ 57:
+/***/ 67:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
