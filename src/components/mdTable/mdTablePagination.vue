@@ -1,8 +1,8 @@
 <template>
   <div class="md-table-pagination">
-    <span class="md-table-pagination-label">{{ mdLabel }}:</span>
+    <span v-if="mdLabel" class="md-table-pagination-label">{{ mdLabel }}:</span>
 
-    <md-select v-model="currentSize" md-menu-class="md-pagination-select" @change="changeSize" v-if="mdPageOptions">
+    <md-select :value="currentSize" md-menu-class="md-pagination-select" @change="changeSize" v-if="mdPageOptions">
       <md-option v-for="amount in mdPageOptions" :value="amount">{{ amount }}</md-option>
     </md-select>
 
@@ -46,9 +46,9 @@
     data() {
       return {
         subTotal: 0,
-        totalItems: 0,
-        currentPage: 1,
-        currentSize: 0
+        totalItems: parseInt(this.mdTotal, 10),
+        currentPage: parseInt(this.mdPage, 10),
+        currentSize: parseInt(this.mdSize, 10)
       };
     },
     watch: {
@@ -106,8 +106,6 @@
     mounted() {
       this.$nextTick(() => {
         this.subTotal = this.currentPage * this.currentSize;
-        this.mdPageOptions = this.mdPageOptions || [10, 25, 50, 100];
-        this.currentSize = this.mdPageOptions[0];
         this.canFireEvents = true;
       });
     }
