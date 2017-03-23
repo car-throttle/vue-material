@@ -777,9 +777,9 @@ exports.default = {
   data: function data() {
     return {
       subTotal: 0,
-      totalItems: 0,
-      currentPage: 1,
-      currentSize: 0
+      totalItems: parseInt(this.mdTotal, 10),
+      currentPage: parseInt(this.mdPage, 10),
+      currentSize: parseInt(this.mdSize, 10)
     };
   },
 
@@ -840,8 +840,6 @@ exports.default = {
 
     this.$nextTick((function () {
       _this.subTotal = _this.currentPage * _this.currentSize;
-      _this.mdPageOptions = _this.mdPageOptions || [10, 25, 50, 100];
-      _this.currentSize = _this.mdPageOptions[0];
       _this.canFireEvents = true;
     }));
   }
@@ -1628,26 +1626,15 @@ if (false) {
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "md-table-pagination"
-  }, [_c('span', {
+  }, [(_vm.mdLabel) ? _c('span', {
     staticClass: "md-table-pagination-label"
-  }, [_vm._v(_vm._s(_vm.mdLabel) + ":")]), _vm._v(" "), (_vm.mdPageOptions) ? _c('md-select', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.currentSize),
-      expression: "currentSize"
-    }],
+  }, [_vm._v(_vm._s(_vm.mdLabel) + ":")]) : _vm._e(), _vm._v(" "), (_vm.mdPageOptions) ? _c('md-select', {
     attrs: {
+      "value": _vm.currentSize,
       "md-menu-class": "md-pagination-select"
     },
-    domProps: {
-      "value": (_vm.currentSize)
-    },
     on: {
-      "change": _vm.changeSize,
-      "input": function($event) {
-        _vm.currentSize = $event
-      }
+      "change": _vm.changeSize
     }
   }, _vm._l((_vm.mdPageOptions), (function(amount) {
     return _c('md-option', {
