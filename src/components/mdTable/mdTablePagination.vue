@@ -35,7 +35,7 @@
         default: 'Many'
       },
       mdLabel: {
-        type: String,
+        type: [String, Boolean],
         default: 'Rows per page'
       },
       mdSeparator: {
