@@ -188,7 +188,10 @@
         this.addNewDirectionMenuContentClass(this.mdDirection);
         this.$el.removeChild(this.$refs.backdrop.$el);
         this.menuContent.parentNode.removeChild(this.menuContent);
-        this.menuTrigger.addEventListener('click', this.toggle);
+        this.menuTrigger.addEventListener('click', (e) => {
+          e.stopPropagation();
+          this.toggle();
+        });
       });
     },
     beforeDestroy() {
