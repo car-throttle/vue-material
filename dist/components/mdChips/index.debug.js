@@ -11,41 +11,41 @@
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
-
+/******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
-
+/******/
 /******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId])
+/******/ 		if(installedModules[moduleId]) {
 /******/ 			return installedModules[moduleId].exports;
-
+/******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = installedModules[moduleId] = {
 /******/ 			i: moduleId,
 /******/ 			l: false,
 /******/ 			exports: {}
 /******/ 		};
-
+/******/
 /******/ 		// Execute the module function
 /******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-
+/******/
 /******/ 		// Flag the module as loaded
 /******/ 		module.l = true;
-
+/******/
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
-
-
+/******/
+/******/
 /******/ 	// expose the modules object (__webpack_modules__)
 /******/ 	__webpack_require__.m = modules;
-
+/******/
 /******/ 	// expose the module cache
 /******/ 	__webpack_require__.c = installedModules;
-
+/******/
 /******/ 	// identity function for calling harmony imports with the correct context
 /******/ 	__webpack_require__.i = function(value) { return value; };
-
+/******/
 /******/ 	// define getter function for harmony exports
 /******/ 	__webpack_require__.d = function(exports, name, getter) {
 /******/ 		if(!__webpack_require__.o(exports, name)) {
@@ -56,7 +56,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 			});
 /******/ 		}
 /******/ 	};
-
+/******/
 /******/ 	// getDefaultExport function for compatibility with non-harmony modules
 /******/ 	__webpack_require__.n = function(module) {
 /******/ 		var getter = module && module.__esModule ?
@@ -65,13 +65,13 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 		__webpack_require__.d(getter, 'a', getter);
 /******/ 		return getter;
 /******/ 	};
-
+/******/
 /******/ 	// Object.prototype.hasOwnProperty.call
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
-
+/******/
 /******/ 	// __webpack_public_path__
 /******/ 	__webpack_require__.p = "/";
-
+/******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = 404);
 /******/ })
@@ -487,7 +487,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         !_vm.disabled && _vm.$emit('delete')
       },
       "keyup": function($event) {
-        if (_vm._k($event.keyCode, "delete", [8, 46])) { return; }
+        if (!('button' in $event) && _vm._k($event.keyCode, "delete", [8, 46])) { return null; }
         !_vm.disabled && _vm.$emit('delete')
       }
     }
@@ -538,11 +538,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       rawName: "v-show",
       value: (!_vm.mdStatic),
       expression: "!mdStatic"
-    }, {
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.currentChip),
-      expression: "currentChip"
     }],
     ref: "input",
     attrs: {
@@ -553,27 +548,26 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "disabled": _vm.disabled,
       "tabindex": "0"
     },
-    domProps: {
-      "value": (_vm.currentChip)
-    },
-    on: {
-      "input": function($event) {
-        _vm.currentChip = $event
-      }
-    },
     nativeOn: {
       "keydown": [function($event) {
-        if (_vm._k($event.keyCode, "delete", [8, 46])) { return; }
+        if (!('button' in $event) && _vm._k($event.keyCode, "delete", [8, 46])) { return null; }
         _vm.deleteLastChip($event)
       }, function($event) {
-        if (_vm._k($event.keyCode, "enter", 13)) { return; }
+        if (!('button' in $event) && _vm._k($event.keyCode, "enter", 13)) { return null; }
         $event.preventDefault();
         _vm.addChip($event)
       }, function($event) {
-        if ($event.keyCode !== 186) { return; }
+        if (!('button' in $event) && $event.keyCode !== 186) { return null; }
         $event.preventDefault();
         _vm.addChip($event)
       }]
+    },
+    model: {
+      value: (_vm.currentChip),
+      callback: function($$v) {
+        _vm.currentChip = $$v
+      },
+      expression: "currentChip"
     }
   })], 2)], 1)
 },staticRenderFns: []}
