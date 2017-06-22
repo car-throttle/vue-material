@@ -900,14 +900,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }
   })], 1)], 1), _vm._v(" "), _c('md-dialog-actions', [_c('md-button', {
-    staticClass: "md-primary",
+    staticClass: "md-primary md-raised",
     nativeOn: {
       "click": function($event) {
         _vm.close('cancel')
       }
     }
   }, [_vm._v(_vm._s(_vm.mdCancelText))]), _vm._v(" "), _c('md-button', {
-    staticClass: "md-primary",
+    staticClass: "md-primary md-raised",
     nativeOn: {
       "click": function($event) {
         _vm.confirmValue($event)
@@ -1021,7 +1021,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "innerHTML": _vm._s(_vm.mdContentHtml)
     }
   }) : _c('md-dialog-content', [_vm._v(_vm._s(_vm.mdContent))]), _vm._v(" "), _c('md-dialog-actions', [_c('md-button', {
-    staticClass: "md-primary",
+    staticClass: "md-primary md-raised",
     nativeOn: {
       "click": function($event) {
         _vm.close()
@@ -1104,14 +1104,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "innerHTML": _vm._s(_vm.mdContentHtml)
     }
   }) : _c('md-dialog-content', [_vm._v(_vm._s(_vm.mdContent))]), _vm._v(" "), _c('md-dialog-actions', [_c('md-button', {
-    staticClass: "md-primary",
+    staticClass: "md-primary md-raised",
     nativeOn: {
       "click": function($event) {
         _vm.close('cancel')
       }
     }
   }, [_vm._v(_vm._s(_vm.mdCancelText))]), _vm._v(" "), _c('md-button', {
-    staticClass: "md-primary",
+    staticClass: "md-primary md-raised",
     nativeOn: {
       "click": function($event) {
         _vm.close('ok')
