@@ -4941,6 +4941,7 @@ exports.default = {
     confirmValue: function confirmValue() {
       this.$emit('input', this.$refs.input.$el.value);
       this.close('ok');
+      this.$refs.input.$el.value = '';
     }
   }
 };
