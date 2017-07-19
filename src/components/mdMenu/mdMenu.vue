@@ -200,7 +200,9 @@
         document.body.removeChild(this.backdropElement);
       }
 
-      this.menuTrigger.removeEventListener('click', this.toggle);
+      if (this.menuTrigger) {
+        this.menuTrigger.removeEventListener('click', this.toggle);
+      }
       window.removeEventListener('resize', this.recalculateOnResize);
     }
   };
